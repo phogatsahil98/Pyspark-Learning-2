@@ -1,0 +1,74 @@
+2026-09-14 10:15:45,478 | INFO | ============================================================
+2026-09-14 10:15:45,479 | INFO | E-COMMERCE PIPELINE V2 STARTED
+2026-09-14 10:15:45,479 | INFO | ============================================================
+2026-09-14 10:15:45,479 | INFO | Spark Version: 3.5.9
+2026-09-14 10:15:45,480 | INFO | Application ID: local-1789361144904
+2026-09-14 10:15:45,480 | INFO | Log File: C:\Data Engineer\Pyspark-learning-2\logs\pipeline_run_20260914_101539.log
+2026-09-14 10:15:45,481 | INFO | Raw Directory: C:\Data Engineer\Pyspark-learning-2\data\raw
+2026-09-14 10:15:45,481 | INFO | Processed Directory: C:\Data Engineer\Pyspark-learning-2\data\processed
+2026-09-14 10:15:45,481 | INFO | Quarantine Directory: C:\Data Engineer\Pyspark-learning-2\data\quarantine
+2026-09-14 10:15:45,481 | INFO | Output Directory: C:\Data Engineer\Pyspark-learning-2\output
+2026-09-14 10:15:45,481 | INFO | Reading raw orders...
+2026-09-14 10:15:51,937 | INFO | Reading raw customers...
+2026-09-14 10:15:52,044 | INFO | Reading raw products...
+2026-09-14 10:15:52,156 | INFO | ------------------------------------------------------------
+2026-09-14 10:15:52,156 | INFO | INPUT INFORMATION
+2026-09-14 10:15:52,157 | INFO | ------------------------------------------------------------
+2026-09-14 10:15:53,283 | INFO | Orders partitions: 25
+2026-09-14 10:15:53,283 | INFO | Customers partitions: 2
+2026-09-14 10:15:53,284 | INFO | Products partitions: 2
+2026-09-14 10:15:53,397 | INFO | Validating orders...
+2026-09-14 10:16:01,412 | INFO | Invalid orders: 0
+2026-09-14 10:16:01,414 | INFO | Valid orders: 10000000
+2026-09-14 10:16:01,414 | INFO | Total evaluated orders: 10000000
+2026-09-14 10:16:01,414 | INFO | Invalid percentage: 0.0000%
+2026-09-14 10:16:01,414 | INFO | No invalid orders found. Quarantine remains empty.
+2026-09-14 10:16:01,414 | INFO | Writing validated orders to processed/...
+2026-09-14 10:16:33,391 | INFO | Processed orders written to: C:\Data Engineer\Pyspark-learning-2\data\processed\orders
+2026-09-14 10:16:33,400 | INFO | Preparing dimension tables for broadcast joins...
+2026-09-14 10:16:33,417 | INFO | Joining orders with customers...
+2026-09-14 10:16:33,467 | INFO | Joining orders with products...
+2026-09-14 10:16:33,527 | INFO | Persisting enriched dataset using MEMORY_AND_DISK...
+2026-09-14 10:16:33,683 | INFO | Materializing persisted enriched dataset...
+2026-09-14 10:17:24,338 | INFO | Enriched orders successfully materialized: 10000000
+2026-09-14 10:17:24,338 | INFO | Building city metrics...
+2026-09-14 10:17:24,399 | INFO | Building product metrics...
+2026-09-14 10:17:24,429 | INFO | Applying window ranking...
+2026-09-14 10:17:24,491 | INFO | ------------------------------------------------------------
+2026-09-14 10:17:24,491 | INFO | PHYSICAL PLAN: CITY METRICS
+2026-09-14 10:17:24,492 | INFO | ------------------------------------------------------------
+2026-09-14 10:17:24,556 | INFO | ------------------------------------------------------------
+2026-09-14 10:17:24,556 | INFO | PHYSICAL PLAN: RANKED PRODUCTS
+2026-09-14 10:17:24,556 | INFO | ------------------------------------------------------------
+2026-09-14 10:17:24,615 | INFO | Writing city metrics...
+2026-09-14 10:17:45,369 | INFO | City metrics written to: C:\Data Engineer\Pyspark-learning-2\output\city_metrics
+2026-09-14 10:17:45,369 | INFO | Writing ranked product metrics...
+2026-09-14 10:18:01,047 | INFO | Product metrics written to: C:\Data Engineer\Pyspark-learning-2\output\product_metrics
+2026-09-14 10:18:18,075 | INFO | ------------------------------------------------------------
+2026-09-14 10:18:18,075 | INFO | OUTPUT VALIDATION
+2026-09-14 10:18:18,075 | INFO | ------------------------------------------------------------
+2026-09-14 10:18:18,075 | INFO | City metric rows: 10
+2026-09-14 10:18:18,077 | INFO | Ranked product rows: 100
+2026-09-14 10:18:18,077 | INFO | Sample city metrics:
+2026-09-14 10:18:35,716 | INFO | Sample top products:
+2026-09-14 10:18:49,259 | INFO | Validation passed: enriched row count matches valid order count.
+2026-09-14 10:18:49,270 | INFO | Persisted enriched dataset released.
+2026-09-14 10:18:49,270 | INFO | ============================================================
+2026-09-14 10:18:49,272 | INFO | PIPELINE V2 COMPLETE
+2026-09-14 10:18:49,272 | INFO | ============================================================
+2026-09-14 10:18:49,272 | INFO | Total raw orders evaluated: 10000000
+2026-09-14 10:18:49,272 | INFO | Valid orders: 10000000
+2026-09-14 10:18:49,272 | INFO | Invalid orders: 0
+2026-09-14 10:18:49,272 | INFO | Enriched orders: 10000000
+2026-09-14 10:18:49,274 | INFO | City metrics: 10
+2026-09-14 10:18:49,274 | INFO | Ranked products: 100
+2026-09-14 10:18:49,274 | INFO | Log file: C:\Data Engineer\Pyspark-learning-2\logs\pipeline_run_20260914_101539.log
+2026-09-14 10:18:49,274 | INFO | Processed directory:
+2026-09-14 10:18:49,274 | INFO | C:\Data Engineer\Pyspark-learning-2\data\processed\orders
+2026-09-14 10:18:49,274 | INFO | Quarantine directory:
+2026-09-14 10:18:49,274 | INFO | C:\Data Engineer\Pyspark-learning-2\data\quarantine\orders
+2026-09-14 10:18:49,274 | INFO | Output directory:
+2026-09-14 10:18:49,274 | INFO | C:\Data Engineer\Pyspark-learning-2\output
+2026-09-14 10:21:42,980 | INFO | Spark session stopped.
+2026-09-14 10:21:42,980 | INFO | Pipeline process exited successfully.
+2026-09-14 10:21:43,017 | INFO | Closing down clientserver connection
